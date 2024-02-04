@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity"
+    tools:ignore="ExtraText">
+
+    <TextView
+        android:id="@+id/idTVAppName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Online Library"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:layout_margin="20dp"/>
+
+    <LinearLayout
+        android:id="@+id/idLLsearch"
+        android:layout_below="@id/idTVAppName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:layout_margin="30dp"
+        android:orientation="horizontal"
+        android:weightSum="5">
+
+        <!--edit text for getting the search query for book from user-->
+        <EditText
+            android:id="@+id/idEdtSearchBooks"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:textStyle="bold"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:layout_weight="4" />
+
+        <!--image button for our search button -->
+        <ImageButton
+            android:id="@+id/idBtnSearch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_search" />
+
+    </LinearLayout>
+
+    <!--recycler view for displaying our list of books-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/idRVBooks"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/idLLsearch" />
+
+    <!--progressbar for displaying our loadinig indicator-->
+    <ProgressBar
+        android:id="@+id/idLoadingPB"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+
+</RelativeLayout>
